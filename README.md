@@ -35,5 +35,8 @@ docker-compose exec web bundle exec rake app:update:bin
 Railsの画面が表示されていれば成功
 
 
-
+# 2. コマンド
+```text
+docker-compose exec web bundle exec web 〇〇
+```
 
