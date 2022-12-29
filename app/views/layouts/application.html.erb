@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bloggers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <header class="bg-dark text-white">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand text-light" href="#">Bloggers</a>
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <strong><%#= link_to current_user.username, auth_show_path %></strong>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'nav-link text-white' %>
+                <%= link_to ' ホーム', user_path(current_user.id), class: ' nav-link text-white' %>
+                <%= link_to '投稿一覧', blogs_path, class: ' nav-link text-white' %>
+                <%= link_to 'ユーザ一覧', users_path, class: ' nav-link text-white' %>
+              <% else %>
+                <%= link_to ' ログイン', new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-white' %>
+                <%= link_to ' ホーム', root_path, class: 'fas fa-home nav-link text-white' %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

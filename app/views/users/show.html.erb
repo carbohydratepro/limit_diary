@@ -1,0 +1,23 @@
+<main>
+  <div class="container">
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <h5 class="border-bottom pb-2 mb-0">ユーザ情報</h5>
+      <div class="d-flex text-muted pt-3">
+        <div class="pb-3 mb-0 lh-sm w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark"><%= @user.name %></strong>
+          </div>
+          <span class="d-block"><%= @user.email %></span>
+        </div>
+      </div>
+          <h5 class="border-bottom pb-2 mb-0">自己紹介</h5>
+          <div class="d-flex text-muted pt-3">
+        <div class="pb-3 mb-0 lh-sm w-100">
+          <div class="d-flex justify-content-between">
+          </div>
+          <span class="d-block"><%= @user.introduction %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

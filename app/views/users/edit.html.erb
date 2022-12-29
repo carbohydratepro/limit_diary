@@ -1,0 +1,31 @@
+<% if @user.errors.any? %>
+  <div class="m-2 text-danger">
+    <%= @user.errors.count %>errors have occurred.
+    <% @user.errors.full_messages.each do |message| %>
+  </div>
+    <li class="m-2 text-danger"><%= message %></li>
+  <% end %>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class=class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>User info</h1>
+        <%= form_with model:@user, local:true do |f| %>
+        <div class="field mb-3">
+          <label for="inputName">Name</label></br>
+          <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"name", class: "form-control"%></br>
+        </div>
+        <div class="field mb-3">
+          <label for="inputIntroduction">Introduction</label></br>
+          <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"introduction", class: "form-control"%></br>
+        </div>
+          <div class="form-group"></br>
+            <input type="submit" name="commit" value="Update User" class="btn btn-lg btn-primary btn-bloc" data-disable-with="Update User"></br>
+          </div>
+        <% end %>
+        
+    </div>
+  </div>
+</div>
+<main>
+  
