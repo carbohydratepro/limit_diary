@@ -37,6 +37,6 @@ Railsの画面が表示されていれば成功
 
 # 2. コマンド
 ```text
-docker-compose exec web bundle exec web 〇〇
+docker-compose exec web 〇〇
 ```
 
