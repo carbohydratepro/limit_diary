@@ -80,3 +80,6 @@ gem 'devise'
 gem 'faker'
 
 gem 'kaminari'
+
+gem 'carrierwave'
+gem 'mini_magick'

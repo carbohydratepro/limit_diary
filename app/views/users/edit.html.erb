@@ -19,6 +19,11 @@
           <label for="inputIntroduction">Introduction</label></br>
           <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"introduction", class: "form-control"%></br>
         </div>
+        <div class="field mb-3">
+          <%= f.label :post_image%>
+          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+          <%= f.hidden_field :post_image_cache %>
+        </div>
           <div class="form-group"></br>
             <input type="submit" name="commit" value="Update User" class="btn btn-lg btn-primary btn-bloc" data-disable-with="Update User"></br>
           </div>
