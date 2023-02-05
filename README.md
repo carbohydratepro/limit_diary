@@ -26,6 +26,8 @@ docker-compose up -d
 ```text
 docker-compose exec web rake db:create
 
+docker-compose exec web rake db:migrate
+
 docker-compose exec web bundle install
 
 docker-compose exec web bundle exec rake app:update:bin
