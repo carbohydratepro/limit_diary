@@ -33,6 +33,7 @@ docker-compose exec web bundle install
 docker-compose exec web bundle exec rake app:update:bin
 ```
 
+#### ※app\javascript\componentsにapplication.jsが存在していた場合は削除
 ```text
 docker-compose exec web rails javascript:install:esbuild
 
