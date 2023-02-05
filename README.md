@@ -33,6 +33,15 @@ docker-compose exec web bundle install
 docker-compose exec web bundle exec rake app:update:bin
 ```
 
+```text
+docker-compose exec web rails javascript:install:esbuild
+
+docker-compose exec web yarn watch
+
+docker-compose exec web yarn add react react-dom @babel/preset-react
+
+```
+
 ### 1-5. localhost:3000にアクセス
 Railsの画面が表示されていれば成功
 
