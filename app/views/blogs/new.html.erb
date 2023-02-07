@@ -1,27 +1,31 @@
 <div class="container">
-<h1>記事作成</h1>
-<%= form_with model: @blog, local:true do |f| %>
-  <div class="mb-3">
-    <label class="form-label">タイトル</label>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-    <label class="form-label">内容</label>
-    <%= f.text_area :body, class: "form-control", :oninput => 'handleChange(this.value)'%>
-  </div>
-  <%= f.submit '投稿', class: "btn btn-primary"%>
-<% end %>
-  <div class="sakubun">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/list', user: current_user %>
+    </div>
+    <div class="mx-auto col-md-8 offset-md-1">
+      <h1>記事作成</h1>
+      <%= form_with model: @blog, local:true do |f| %>
+        <label class="form-label">タイトル</label>
+        <%= f.text_field :title, class: "form-control" %>
+        <label class="form-label">内容</label>
+        <%= f.text_area :body, class: "form-control", :oninput => 'handleChange(this.value)'%>
+        <%= f.submit '投稿', class: "btn btn-primary"%>
+      <% end %>
+      <div class="sakubun">
+      </div>
+      <script type="text/javascript">
+        const height = 10;
+        const width = 10;
+        let pos_x = 1;
+
+        function handleChange(text){
+          text.replace("\n", "<br>");
+          $('.sakubun').html(`<p>${text}</p>`);
+        }
+
+      </script>
+    </div>
   </div>
 </div>
 
-<script type="text/javascript">
-  const height = 10;
-  const width = 10;
-  let pos_x = 1;
-
-  function handleChange(text){
-    text.replace("\n", "<br>");
-    $('.sakubun').html(`<p>${text}</p>`);
-  }
-
-</script>

@@ -1,18 +1,23 @@
 <div class="container">
-  <h2>記事一覧</h2>
-  <%= link_to ' 投稿', new_blog_path, class: "btn btn-primary" %>
-  <ul>
-  <% @blogs.each do |blog| %>
-    <div class="card w-75 mb-3">
-      <div class="card-body">
-        <h3 class="card-title"><%= blog.title %></h3>
-        <h6 class="card-subtitle mb-2 text-muted fas fa-user"><%= @users.find(blog.user_id).name %></h6>
-        <p class="card-text"><%= blog.body %></p>
-        <%= link_to ' 詳細', blog_path(blog.id) %>
-      </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/list', user: current_user %>
     </div>
-  <% end %>
-  </ul>
-
-  <%= paginate @blogs %>
+    <div class="mx-auto col-md-8 offset-md-1">
+      <h2>記事一覧</h2>
+      <%= link_to ' 投稿', new_blog_path, class: "btn btn-primary" %>
+      <ul>
+      <% @blogs.each do |blog| %>
+        <div class="card w-75 mb-3">
+          <div class="card-body">
+            <h3 class="card-title"><%= blog.title %></h3>
+            <h6 class="card-subtitle mb-2 text-muted fas fa-user"><%= @users.find(blog.user_id).name %></h6>
+            <p class="card-text"><%= blog.body %></p>
+            <%= link_to ' 詳細', blog_path(blog.id) %>
+          </div>
+        </div>
+      <% end %>
+      </ul>
+      <%= paginate @blogs %>
+    </div>
 </div>
