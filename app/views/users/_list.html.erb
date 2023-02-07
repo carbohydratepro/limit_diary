@@ -9,7 +9,8 @@
     <strong> <%= user.name %></strong>
   </div>
   <div class="border-top" style="padding:10px;">
-    <strong></strong>introduction</strong>
-    <strong> <%= user.introduction %></strong>
+    <strong>introduction</strong>
+    <strong><%= user.introduction %></strong>
   </div>
+  <%= link_to '編集', edit_user_path(current_user.id) %>
 </div>
