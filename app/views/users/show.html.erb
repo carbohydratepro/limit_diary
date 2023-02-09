@@ -1,22 +1,26 @@
 <main>
   <div class="container">
-    <div class="my-3 p-3 bg-body rounded shadow-sm">
-      <h5 class="border-bottom pb-2 mb-0">ユーザ情報</h5>
-      <%= image_tag @user.image.thumb.url %>
-      <div class="d-flex text-muted pt-3">
-        <div class="pb-3 mb-0 lh-sm w-100">
-          <div class="d-flex justify-content-between">
-            <strong class="text-gray-dark"><%= @user.name %></strong>
-          </div>
-          <span class="d-block"><%= @user.email %></span>
-        </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'users/list', user: @user %>
       </div>
-          <h5 class="border-bottom pb-2 mb-0">自己紹介</h5>
-          <div class="d-flex text-muted pt-3">
-        <div class="pb-3 mb-0 lh-sm w-100">
-          <div class="d-flex justify-content-between">
+      <div class="mx-auto col-md-8 offset-md-1 bg-body rounded shadow-sm">
+        <h5 class="border-bottom pb-2 mb-0">ユーザ情報</h5>
+        <%= image_tag @user.image.thumb.url %>
+        <div class="d-flex text-muted pt-3">
+          <div class="pb-3 mb-0 lh-sm w-100">
+            <div class="d-flex justify-content-between">
+              <strong class="text-gray-dark"><%= @user.name %></strong>
+            </div>
+            <span class="d-block"><%= @user.email %></span>
           </div>
-          <span class="d-block"><%= @user.introduction %></span>
+        </div>
+        <h5 class="border-bottom pb-2 mb-0">自己紹介</h5>
+        <div class="d-flex text-muted pt-3">
+          <div class="pb-3 mb-0 lh-sm w-100">
+            <div class="d-flex justify-content-between"></div>
+            <span class="d-block"><%= @user.introduction %></span>
+          </div>
         </div>
       </div>
     </div>

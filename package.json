@@ -6,6 +6,7 @@
     "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.18.6",
     "esbuild": "^0.17.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

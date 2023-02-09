@@ -8,7 +8,10 @@
 <% end %>
 <div class="container">
   <div class="row">
-    <div class=class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+    <div class="col-md-3">
+      <%= render 'users/list', user: @user %>
+    </div>
+    <div class="mx-auto col-md-8 offset-md-1">
       <h1>User info</h1>
         <%= form_with model:@user, local:true do |f| %>
         <div class="field mb-3">
@@ -28,9 +31,6 @@
             <input type="submit" name="commit" value="Update User" class="btn btn-lg btn-primary btn-bloc" data-disable-with="Update User"></br>
           </div>
         <% end %>
-        
     </div>
   </div>
 </div>
-<main>
-  
