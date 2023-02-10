@@ -83,4 +83,3 @@ gem 'mini_magick'
 
 gem 'jsbundling-rails'
 
-gem "propshaft"
