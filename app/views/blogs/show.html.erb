@@ -11,5 +11,26 @@
         </div>
       </body>
     </div>
+    <% if @blog.favorited_by?(current_user) %>
+      <p>
+        <td>
+          <%= link_to blog_favorites_path(@blog), data: { turbo_method: :delete } do %>
+            <p class="text-danger">
+              <i class="fas fa-heart"></i><%= @blog.favorites.count %>
+            </p>
+          <% end %>
+        </td>
+      </p>
+      <% else %>
+      <p>
+        <td>
+          <%= link_to blog_favorites_path(@blog), data: { turbo_method: :post } do %>
+            <p class="text-primary">
+              <i class="fas fa-heart"></i><%= @blog.favorites.count %>
+            </p>
+          <% end %>
+        </td>
+      </p>
+    <% end %>
   </div>
 </main>
