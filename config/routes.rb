@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
 
-  resources :blogs, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+  resources :blogs, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :users, only: [:index, :show, :edit, :update]
 end
