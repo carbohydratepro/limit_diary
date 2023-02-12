@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :s, dependent: :destroy
+  has_many :blogs, dependent: :destroy
   has_many :favorites, dependent: :destroy
   mount_uploader :image, ImageUploader
   # Include default devise modules. Others available are:
