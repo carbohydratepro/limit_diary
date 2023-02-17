@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(post_params)
+    @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     @blog.save
     redirect_to '/blogs'
@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
   end
 
   private
-    def post_params #ストロングパラメータ
+    def blog_params #ストロングパラメータ
       params.require(:blog).permit(:title, :body)
     end
 end
