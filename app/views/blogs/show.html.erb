@@ -7,13 +7,13 @@
     <div class="mx-auto col-md-8 offset-md-1">
       <body>
         <div class="sakubun">
-          <p>「<%= @blog.title %>」<br> <%= @blog.body %></p>
+          <p><%= @blog.title %><br> <%= @blog.body %></p>
         </div>
       </body>
       <% if @blog.favorited_by?(current_user) %>
         <p>
           <td>
-            <%= button_to blog_favorites_path(@blog), data: { turbo_method: :delete } do %>
+            <%= button_to blog_favorites_path(@blog), method: :delete do %>
               <p class="text-danger">
                 <i class="fas fa-heart"></i><%= @blog.favorites.count %>
               </p>
@@ -23,7 +23,7 @@
         <% else %>
         <p>
           <td>
-            <%= button_to blog_favorites_path(@blog), data: { turbo_method: :post } do %>
+            <%= button_to blog_favorites_path(@blog), method: :post do %>
               <p class="text-primary">
                 <i class="fas fa-heart"></i><%= @blog.favorites.count %>
               </p>
@@ -31,6 +31,7 @@
           </td>
         </p>
       <% end %>
+
     </div>
   </div>
 </main>
