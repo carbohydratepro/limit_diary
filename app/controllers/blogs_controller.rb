@@ -20,6 +20,15 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def destroy
+    @blog = Blog.find(params[:id])
+    logger.debug(@blog.inspect)
+    if @blog.user_id == current_user.id
+      @blog.destroy
+    end
+    redirect_to '/blogs'
+  end
+
   private
     def blog_params #ストロングパラメータ
       params.require(:blog).permit(:title, :body)
