@@ -33,12 +33,6 @@ def createData(tablename, debug=False, run=False):
         return data
 
     def blogs():
-        # t.string "title"
-        # t.text "body"
-        # t.integer "user_id"
-        # t.datetime "created_at", null: false
-        # t.datetime "updated_at", null: false
-
         # textを全角にして返す関数
         def to_full_width(text):
             return mojimoji.zen_to_han(text, kana=False)
@@ -83,11 +77,27 @@ def createData(tablename, debug=False, run=False):
         return data
 
 
+    def favorites():
+        # データのリストを作成
+        data = [] #user_id, blog_id, created_at, updated_at
+        for i in range(1000):
+            now = datetime.now()
+            formatted_now = now.strftime("%Y-%m-%d %H:%M:%S")
+            user_id = random.randint(1, 100)
+            blog_id = random.randint(1, 300)
+
+            data.append([user_id, blog_id, formatted_now, formatted_now])
+
+        return data
+
+
     def create():
         if tablename == "users":
             data = users()
         elif tablename == "blogs":
             data = blogs()
+        elif tablename == "favorites":
+            data = favorites()
 
 
         # CSVファイルを書き込みモードで開く
@@ -109,7 +119,8 @@ def createData(tablename, debug=False, run=False):
 
 def main():
     tablenames = [["users", True, False],
-                   ["blogs", False, True]
+                   ["blogs", True, False],
+                   ["favorites", False, True]
                   ]
     for tablename, debug, run in tablenames:
         createData(tablename, debug, run)

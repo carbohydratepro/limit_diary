@@ -7,3 +7,7 @@ end
 CSV.foreach('db/blogs.csv').with_index do |row, index|
   Blog.create(:title => row[0], :body => row[1], :user_id => row[2], :created_at => row[3], :updated_at => row[4])
 end
+
+CSV.foreach('db/favorites.csv').with_index do |row, index|
+  Favorite.create(:user_id => row[0], :blog_id => row[1], :created_at => row[2], :updated_at => row[3])
+end
