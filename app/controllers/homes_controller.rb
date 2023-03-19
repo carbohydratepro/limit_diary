@@ -4,4 +4,7 @@ class HomesController < ApplicationController
 
   def about
   end
+
+  def caution
+  end
 end
