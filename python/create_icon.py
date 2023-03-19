@@ -1,10 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
 import random
-import os
-
-# 保存先ディレクトリを作成
-if not os.path.exists('icons'):
-    os.mkdir('icons')
 
 # アイコンのサイズ
 icon_size = (100, 100)
@@ -34,5 +29,5 @@ for i in range(100):
     draw.text(((icon_size[0] - text_width) / 2, (icon_size[1] - text_height) / 2), text, font=font, fill=(255, 255, 255))
 
     # 画像を保存
-    filename = f'icons/icon_{i}.png'
+    filename = f'../app/assets/images/icon_{i}.png'
     icon.save(filename)
