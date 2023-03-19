@@ -22,9 +22,13 @@
                 <%= link_to ' ホーム', user_path(current_user.id), class: ' nav-link text-white' %>
                 <%= link_to '投稿一覧', blogs_path, class: ' nav-link text-white' %>
                 <%= link_to 'ユーザ一覧', users_path, class: ' nav-link text-white' %>
+                <%= link_to 'このサイトについて', home_about_path, class: 'nav-link text-white' %>
+                <%= link_to '利用規約', home_caution_path, class: 'nav-link text-white' %>
               <% else %>
                 <%= link_to ' ログイン', new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-white' %>
                 <%= link_to ' ホーム', root_path, class: 'fas fa-home nav-link text-white' %>
+                <%= link_to 'このサイトについて', home_about_path, class: 'nav-link text-white' %>
+                <%= link_to '利用規約', home_catuion_path, class: 'nav-link text-white' %>
               <% end %>
             </ul>
           </div>
