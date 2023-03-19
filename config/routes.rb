@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/about', to: 'homes#about'
+  get 'home/caution', to: 'homes#caution'
   devise_for :users
 
   devise_scope :user do
